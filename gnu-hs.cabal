@@ -1,0 +1,41 @@
+name:                gnu-hs
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            http://github.com/eggonabull/gnu-hs#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Drew Faubion
+maintainer:          dfaubion.umd@gmail.com
+copyright:           None
+category:            Data Analysis
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable gnu-hs-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , gnu-hs
+  default-language:    Haskell2010
+
+test-suite gnu-hs-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , gnu-hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/eggonabull/gnu-hs
